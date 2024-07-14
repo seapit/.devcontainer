@@ -28,7 +28,8 @@
 				"SonarSource.sonarlint-vscode",
 				"ms-vscode.makefile-tools",
 				"ms-vscode.cmake-tools",
-				"mhutchie.git-graph"
+				"mhutchie.git-graph",
+				"augustocdias.tasks-shell-input"
 			]
 		}
 	},
