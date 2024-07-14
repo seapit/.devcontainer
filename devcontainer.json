@@ -1,0 +1,42 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
+{
+	"name": "C++",
+	"build": {
+		"dockerfile": "Dockerfile"
+	},
+
+	// Features to add to the dev container. More info: https://containers.dev/features.
+	// "features": {},
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "gcc -v",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"jebbs.plantuml",
+				"cschlosser.doxdocgen",
+				"ms-vscode.cpptools",
+				"ms-vscode.cpptools-extension-pack",
+				"ms-vscode.cpptools-themes",
+				"xaver.clang-format",
+				"SonarSource.sonarlint-vscode",
+				"ms-vscode.makefile-tools",
+				"ms-vscode.cmake-tools",
+				"mhutchie.git-graph"
+			]
+		}
+	},
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+	
+	// Want /workspaces to be the cpp specific one... lets set that up
+	"workspaceMount": "source=${localWorkspaceFolder}/cpp,target=/workspace,type=bind",
+	// Ensure our workspace
+	"workspaceFolder": "/workspace"
+}
