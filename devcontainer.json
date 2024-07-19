@@ -20,7 +20,8 @@
 				"ms-vscode.makefile-tools",
 				"ms-vscode.cmake-tools",
 				"mhutchie.git-graph",
-				"augustocdias.tasks-shell-input"
+				"augustocdias.tasks-shell-input",
+				"Meezilla.json"
 			]
 		}
 	},
@@ -34,8 +35,9 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "git config --global --add safe.directory /${workspaceFolder} && git config --global --add user.name carlo pitruzzello && git config --global --add user.email carlo.pitruzzello+git@gmail.com"
+	"postCreateCommand": "git config --global --add safe.directory /${workspaceFolder} && git config --global --add user.name 'carlo pitruzzello' && git config --global --add user.email carlo.pitruzzello+git@gmail.com",
 
+	//"postStartCommand": ""
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
 	// "remoteUser": "root"
 
