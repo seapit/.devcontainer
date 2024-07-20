@@ -21,7 +21,8 @@
 				"ms-vscode.cmake-tools",
 				"mhutchie.git-graph",
 				"augustocdias.tasks-shell-input",
-				"Meezilla.json"
+				"Meezilla.json",
+				"lakshmikanthayyadevara.githooks"
 			]
 		}
 	},

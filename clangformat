@@ -39,5 +39,5 @@ SpacesInAngles: 'false'
 SpacesInParentheses: 'false'
 SpacesInSquareBrackets: 'false'
 UseTab: ForContinuationAndIndentation
-
+NameSpaceIndentation: All
 ...
