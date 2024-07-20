@@ -22,9 +22,10 @@ elif [[ "$1" == "copy" ]]; then
   #printf "\nrepohelper.module\n"
   cp "${workspaceFolder}/$2/$3" "${workspaceFolder}/$2/libs/$3" "-R"
   
-elif [[ "$1" == "set active" ]]; then
-  #printf "\nrepohelper.module\n"
-  export activeRepo="${workspaceFolder}/$2"
+elif [[ "$1" == "setactive" ]]; then
+  #printf "activeRepo=${workspaceFolder}/$2\n"
+  echo "activeRepo=${workspaceFolder}/$2" > ${workspaceFolder}/.devcontainer/activeRepo.env
+  source ${workspaceFolder}/.devcontainer/activeRepo.env
 else
   echo "Called task from invalid start directory (you are not in a valid repo)"
 fi
