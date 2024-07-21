@@ -4,7 +4,7 @@ repo="${workspaceFolder}/$2"
 
 temp_top_apps="${repo}/.cmakefiles/templates/apps"
 temp_top_libs="${repo}/.cmakefiles/templates/libs"
-temp_bot_app="${repo}/.cmakefiles/templates/apps/App1/"
+temp_bot_app="${repo}/.cmakefiles/templates/apps/App1"
 temp_bot_lib="${repo}/.cmakefiles/templates/libs/Lib1"
 
 # # Check if the variables are set
@@ -18,12 +18,19 @@ if [[ "$1" == "init" ]]; then
 elif [[ "$1" == "app" ]]; then
   #printf "\nrepohelper.app\n"
   mkdir -p "${repo}/apps/$3"
-  cp "${temp_bot_app}" "${repo}/apps/$3" "-R"
+  cp "${temp_bot_app}/"* "${repo}/apps/$3" "-R"
+  mv "${repo}/apps/$3/inc/App1" "${repo}/apps/$3/inc/$3"
+  # cp "${temp_bot_app}/inc/App1/"* "${repo}/apps/$3/inc/$3" "-R"
+  # cp "${temp_bot_app}"/src "${repo}/apps/$3" "-R"
 
 elif [[ "$1" == "module" ]]; then
   #printf "\nrepohelper.module\n"
   mkdir -p "${repo}/libs/$3"
-  cp "${temp_bot_lib}/"* "${repo}/libs/$3/" "-R"
+  cp "${temp_bot_lib}/"* "${repo}/libs/$3" "-R"
+  mv "${repo}/libs/$3/inc/Lib1" "${repo}/libs/$3/inc/$3"
+  # cp "${temp_bot_lib}/inc/Lib1/"* "${repo}/libs/$3/inc/$3" "-R"
+  # cp "${temp_bot_lib}"/src "${repo}/libs/$3" "-R"
+  # cp "${temp_bot_lib}"/test "${repo}/libs/$3" "-R"
 
 elif [[ "$1" == "copy" ]]; then
   #printf "\nrepohelper.module\n"
