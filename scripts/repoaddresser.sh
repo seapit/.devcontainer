@@ -1,3 +1,3 @@
 #!/bin/bash
 
-${workspaceFolder}/$2/.cmakefiles/repohelper.sh $1 $2 $3
+${workspaceFolder}/.devcontainer/scripts/repohelper.sh $1 $2 $3

@@ -16,8 +16,6 @@
 				"jebbs.plantuml",
 				"cschlosser.doxdocgen",
 				"ms-vscode.cpptools",
-				"ms-vscode.cpptools-extension-pack",
-				"ms-vscode.cpptools-themes",
 				"xaver.clang-format",
 				"SonarSource.sonarlint-vscode",
 				"ms-vscode.makefile-tools",
@@ -25,7 +23,9 @@
 				"mhutchie.git-graph",
 				"augustocdias.tasks-shell-input",
 				"Meezilla.json",
-				"lakshmikanthayyadevara.githooks"
+				"lakshmikanthayyadevara.githooks",
+				"GitHub.github-vscode-theme",
+				"twxs.cmake"
 			]
 		}
 	},
