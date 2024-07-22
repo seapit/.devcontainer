@@ -25,7 +25,8 @@
 				"Meezilla.json",
 				"lakshmikanthayyadevara.githooks",
 				"GitHub.github-vscode-theme",
-				"twxs.cmake"
+				"twxs.cmake",
+				"jeff-hykin.better-cpp-syntax"
 			]
 		}
 	},
