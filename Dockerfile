@@ -15,15 +15,14 @@ RUN if [ "${REINSTALL_CMAKE_VERSION_FROM_SOURCE}" != "none" ]; then \
 
 # [Optional] Uncomment this section to install additional packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends clang-format libgtest-dev \
-    && apt-get clean
+    && apt-get -y install --no-install-recommends clang-format libgtest-dev wget python3-full python3-pip \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Build GTest library
 #RUN cd /usr/src/googletest && \
 #    cmake . cmake --build . --target install
 RUN mkdir -p /googletest \
     && git clone https://github.com/google/googletest.git -b v1.14.0 /googletest \
-    && mkdir -p /googletest/build
-
-WORKDIR /googletest/build
-RUN cmake .. && make && make install
+    && mkdir -p /googletest/build \
+    && cd /googletest/build \
+    && cmake .. && make && make install

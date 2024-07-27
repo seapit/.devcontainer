@@ -26,7 +26,12 @@
 				"lakshmikanthayyadevara.githooks",
 				"GitHub.github-vscode-theme",
 				"twxs.cmake",
-				"jeff-hykin.better-cpp-syntax"
+				"jeff-hykin.better-cpp-syntax",
+				"matepek.vscode-catch2-test-adapter",
+				"cheshirekow.cmake-format",
+				"Guyutongxue.cpp-reference",
+				"ArturoDent.folder-operations",
+				"foxundermoon.shell-format"
 			]
 		}
 	},

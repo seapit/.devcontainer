@@ -23,11 +23,12 @@ is_valid_extension() {
 
 # Loop through staged files
 for FILE in $(git diff --cached --name-only --diff-filter=ACM); do
+  REPO_ROOT=$(pwd)
   if is_valid_extension "$FILE"; then
     # Apply clang-format
     clang-format -i "$FILE"
   fi
-    sed -i '' -e's/[[:space:]]*$//' "$FILE"
+    sed -i -e 's/[[:space:]]*$//' "$REPO_ROOT/$FILE"
     # Add the file back to the staging area
     git add "$FILE"
 done
