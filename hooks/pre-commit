@@ -9,6 +9,7 @@
 
 # List of file extensions to be formatted
 EXTENSIONS="c h cpp cpp cc"
+CMAKEEXT="CMakeLists.txt *.cmake"
 
 # Function to check if a file has a valid extension
 is_valid_extension() {
@@ -21,6 +22,23 @@ is_valid_extension() {
     return 1
 }
 
+# Function to check file is a CMakeLists
+is_cmake_file() {
+    local file=$1
+    for ext in $CMAKEEXT; do
+        if [[ "$file" == *.$ext ]]; then
+            return 0
+        fi
+    done
+    return 1
+}
+
+need_cmake_format()
+{
+  local file=$1
+  return cmake-format -check $file
+}
+
 # Loop through staged files
 for FILE in $(git diff --cached --name-only --diff-filter=ACM); do
   REPO_ROOT=$(pwd)
@@ -28,9 +46,14 @@ for FILE in $(git diff --cached --name-only --diff-filter=ACM); do
     # Apply clang-format
     clang-format -i "$FILE"
   fi
-    sed -i -e 's/[[:space:]]*$//' "$REPO_ROOT/$FILE"
-    # Add the file back to the staging area
-    git add "$FILE"
+  if is_cmake_file "$REPO_ROOT/$FILE"; then
+    if need_cmake_format "$REPO_ROOT/$FILE"; then
+      cmake-format -i "$REPO_ROOT/$FILE"
+    fi
+  fi
+  sed -i -e 's/[[:space:]]*$//' "$REPO_ROOT/$FILE"
+  # Add the file back to the staging area
+  git add "$FILE"
 done
 
 if git rev-parse --verify HEAD >/dev/null 2>&1
