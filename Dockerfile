@@ -15,7 +15,7 @@ RUN if [ "${REINSTALL_CMAKE_VERSION_FROM_SOURCE}" != "none" ]; then \
 
 # [Optional] Uncomment this section to install additional packages.
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends clang-format libgtest-dev wget python3-full python3-pip \
+    && apt-get -y install --no-install-recommends clang-format libgtest-dev wget python3-full pipx \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Build GTest library
@@ -26,3 +26,5 @@ RUN mkdir -p /googletest \
     && mkdir -p /googletest/build \
     && cd /googletest/build \
     && cmake .. && make && make install
+
+RUN pipx install cmakelang
