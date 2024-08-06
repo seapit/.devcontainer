@@ -45,7 +45,7 @@
 	// "forwardPorts": [],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "git config --global --add safe.directory /${workspaceFolder} && git config --global --add user.name 'carlo pitruzzello' && git config --global --add user.email carlo.pitruzzello+git@gmail.com && git config --global --add core.hooksPath /workspaces/cpp/.devcontainer/hooks/",
+	"postCreateCommand": "git config --global --add safe.directory /${workspaceFolder} && git config --global --add core.hooksPath /workspaces/cpp/.devcontainer/hooks/",
 
 	//"postStartCommand": ""
 	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
